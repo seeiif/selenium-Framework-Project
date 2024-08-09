@@ -1,0 +1,9 @@
+
+q	java:S116="VRename this field "ThankYoulbl" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ð‰Ê`8¿•Ä¿‘2
+]	java:S107b"<Method has 9 parameters, which is greater than 7 authorized.(¤÷ø—ùÿÿÿÿ8Å•Ä¿‘2
+o	java:S100F"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀØ¶œúÿÿÿÿ8È•Ä¿‘2
+O
+java:S1172G"2Remove this unused method parameter "productName".(Ù´í‘8É•Ä¿‘2
+o	java:S100b"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤÷ø—ùÿÿÿÿ8Í•Ä¿‘2
+O
+java:S1172d"2Remove this unused method parameter "productName".(Œµ´8Í•Ä¿‘2
