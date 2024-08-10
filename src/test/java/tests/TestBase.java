@@ -1,12 +1,15 @@
 package tests;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
@@ -54,6 +57,14 @@ public class TestBase extends AbstractTestNGCucumberTests{
         }else if(browserName.equalsIgnoreCase("edge")){
             System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/drivers/msedgedriver.exe");
             driver = new EdgeDriver();
+        }else if(browserName.equalsIgnoreCase("chrome-headless")){
+            //add headless mode
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
+                     +"/drivers/chromedriver126.exe");
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");
+            options.addArguments("--window-size=1920,1080");
+            driver = new ChromeDriver(options);
         }
 
         driver.manage().window().maximize();
