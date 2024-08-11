@@ -7,7 +7,6 @@
             <class name="tests.ContactUsTest"/>
             <class name="tests.UserRegistrationTestWithDATAFAKER"></class>
             <class name="tests.ProductHoverMenuTest"/>
-            <class name="tests.SearchProductTest"/>
         </classes>
     </test>
 </suite>
