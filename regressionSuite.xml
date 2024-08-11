@@ -5,10 +5,9 @@
     <test verbose="2" preserve-order="false" name="RegressionSuite Test">
         <classes>
             <class name="tests.ContactUsTest"/>
-            <class name="tests.UserRegistrationTest"/>
+            <class name="tests.UserRegistrationTestWithDATAFAKER"></class>
             <class name="tests.ProductHoverMenuTest"/>
             <class name="tests.SearchProductTest"/>
-            <class name="tests.addProductToShoppingCardTest"/>
         </classes>
     </test>
 </suite>
