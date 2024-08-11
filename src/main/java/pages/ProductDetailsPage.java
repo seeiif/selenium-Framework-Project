@@ -9,7 +9,7 @@ public class ProductDetailsPage extends PageBase{
         super(driver);
     }
 
-    @FindBy(css="div.product-name")
+    @FindBy(xpath="//*[@id=\"product-details-form\"]/div/div[1]/div[2]/div[1]/h1")
     public WebElement currentProductName;
     @FindBy(css="button.button-2.email-a-friend-button")
     public WebElement emailFreindBTN;
