@@ -1,5 +1,6 @@
 package tests;
 
+import data.ReadProperties;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,6 +22,11 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase2 {
+    //SauceLabs configuration
+    public static final String username = ReadProperties.sauceLabsUser.getProperty("username");
+    public static final String accesskey = ReadProperties.sauceLabsUser.getProperty("accesskey");
+    public static final String sauceLabsUrl = "https://"+username+":"+accesskey+ReadProperties.sauceLabsUser.getProperty("saucelabsUrl");
+
     public static String baseUrl = "http://demo.nopcommerce.com";
 
     protected ThreadLocal<RemoteWebDriver> driver = null;
@@ -30,7 +36,11 @@ public class TestBase2 {
         driver = new ThreadLocal<>();
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("browserName", browser);
+        //Selenium grid local
         driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), caps));
+        //Selenium run saucelabs on cloud
+        //driver.set(new RemoteWebDriver(new URL(sauceLabsUrl), caps));
+
         getDriver().navigate().to(baseUrl);
     }
 
