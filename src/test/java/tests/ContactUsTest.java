@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ContactUsPage;
@@ -13,6 +14,11 @@ public class ContactUsTest extends TestBase{
     String enquiry = "Hello admis, this is for test";
 
     @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Contact Us Test Case")
+    @Link(name ="Jira", url = "http://google.com")
+    @Epic("EP-120")
+    @Flaky
     public void UserCanContactUs(){
         homePage = new HomePage(driver);
         homePage.openContactUsPage();

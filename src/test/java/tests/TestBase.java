@@ -48,7 +48,7 @@ public class TestBase extends AbstractTestNGCucumberTests{
     @Parameters({"browser"})
     public void startDriver(@Optional ("chrome") String browserName){
         if(browserName.equalsIgnoreCase("chrome")){
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/chromedriver126.exe");
+             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/chromedriver126.exe");
             driver = new ChromeDriver(chromeOption());
         }else if(browserName.equalsIgnoreCase("firefox")){
             System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/drivers/geckodriver.exe");
@@ -69,7 +69,7 @@ public class TestBase extends AbstractTestNGCucumberTests{
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-        driver.navigate().to("http://demo.nopcommerce.com/");
+        driver.navigate().to("https://demo.nopcommerce.com/");
     }
     //takeScreenShot when test cases fails and add it in the screenshotfolder
     @AfterMethod
